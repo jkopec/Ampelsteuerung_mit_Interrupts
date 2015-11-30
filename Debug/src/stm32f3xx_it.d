@@ -57,7 +57,8 @@ src/stm32f3xx_it.o: ../src/stm32f3xx_it.c \
  /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/stm32f3discovery_hal_lib/HAL_Driver/Inc/stm32f3xx_hal_usart.h \
  /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/stm32f3discovery_hal_lib/HAL_Driver/Inc/stm32f3xx_hal_usart_ex.h \
  /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/stm32f3discovery_hal_lib/HAL_Driver/Inc/stm32f3xx_hal_wwdg.h \
- /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/Ampelsteuerung_mit_Interrupts/inc/stm32f3xx_it.h
+ /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/Ampelsteuerung_mit_Interrupts/inc/stm32f3xx_it.h \
+ /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/stm32f3discovery_hal_lib/Utilities/STM32F3-Discovery/stm32f3_discovery.h
 
 /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/stm32f3discovery_hal_lib/HAL_Driver/Inc/stm32f3xx_hal.h:
 
@@ -176,3 +177,5 @@ src/stm32f3xx_it.o: ../src/stm32f3xx_it.c \
 /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/stm32f3discovery_hal_lib/HAL_Driver/Inc/stm32f3xx_hal_wwdg.h:
 
 /Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/Ampelsteuerung_mit_Interrupts/inc/stm32f3xx_it.h:
+
+/Users/jakubkopec/Dropbox/TGM/5BHIT/SYT/Labor/Weiser/workspace/stm32f3discovery_hal_lib/Utilities/STM32F3-Discovery/stm32f3_discovery.h:

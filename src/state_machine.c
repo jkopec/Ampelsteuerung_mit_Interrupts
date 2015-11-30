@@ -12,7 +12,7 @@
 #include "state_machine.h"
 
 /**
- * Diese Function repräsentiert die State Centric State Machine
+ * Diese Function repräsentiert die State Centric State Machine with Hidden Transitions
  *
  * Hier wird der genaue Ablauf definiert.
  *

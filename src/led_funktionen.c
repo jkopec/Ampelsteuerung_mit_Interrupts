@@ -35,7 +35,6 @@ void led_reset() {
 void rote_led_an() {
 	led_reset(); //Zuerst alle LEDs ausschalten
 	BSP_LED_On(LED_RED); //Rote LED einschalten
-	//HAL_Delay(2000); //zwei Sekunden warten
 }
 
 /**
@@ -48,7 +47,6 @@ void rote_gelbe_led_an() {
 	led_reset(); //Zuerst alle LEDs ausschalten
 	BSP_LED_On(LED_RED); //Rote LED einschalten
 	BSP_LED_On(LED_ORANGE); //Gelbe LED einschalten
-	//HAL_Delay(2000); //zwei Sekunden warten
 }
 
 /**
@@ -60,21 +58,6 @@ void rote_gelbe_led_an() {
 void gruene_led_an() {
 	led_reset(); //Zuerst alle LEDs ausschalten
 	BSP_LED_On(LED_GREEN_2); //Gruene LED einschalten
-	//HAL_Delay(2000); //zwei Sekunden warten
-}
-
-/**
- * Diese Function laesst die gruene LED blinken.
- *
- * @retval void None
- */
-void gruene_led_blink() {
-	led_reset(); //Zuerst alle LEDs ausschalten
-
-	BSP_LED_On(LED_GREEN_2); //Gruene LED einschalten
-	HAL_Delay(500); //eine halbe Sekunde warten
-	BSP_LED_Off(LED_GREEN_2); //Gruene LED ausschalten
-	//HAL_Delay(500); //eine halbe Sekunde warten
 }
 
 /**
@@ -86,19 +69,5 @@ void gruene_led_blink() {
 void gelbe_led_an() {
 	led_reset(); //Zuerst alle LEDs ausschalten
 	BSP_LED_On(LED_ORANGE); //Gelbe LED einschalten
-	//HAL_Delay(2000); //zwei Sekunden warten
 }
 
-/**
- * Diese Function laesst die gelbe LED blinken.
- *
- * @retval void None
- */
-void gelbe_led_blink() {
-	led_reset(); //Zuerst alle LEDs ausschalten
-
-	BSP_LED_On(LED_ORANGE);//Gelbe LED einschalten
-	//HAL_Delay(500);//halbe Sekunde warten
-	BSP_LED_Off(LED_ORANGE);//Gelbe LED ausschalten
-	//HAL_Delay(500);//halbe Sekunde warten
-}

@@ -18,7 +18,7 @@
 void EXTI0_Config();
 
 ampelsteuerung_zustand ampel; //!< Variable für den Zustand der Ampel definieren
-ampelsteuerung_zustand* licht;
+ampelsteuerung_zustand* licht; //!< Variable für den Zustand der Ampel definieren
 
 /**
  * Die Main-Function initialisiert den STM + LEDs und führt im
@@ -50,45 +50,50 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
-// configure interrupts
+/**
+  * @brief  Diese Funktion konfiguriert den Interrupt.
+  * @param  None
+  * @retval None
+  */
 void EXTI0_Config(void) {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
-	/* Enable GPIOA clock */
-	__GPIOA_CLK_ENABLE();
+	__GPIOA_CLK_ENABLE(); // GPIOA Uhr aktivieren
 
-	/* Configure User Button, connected to PE6 IOs in External Interrupt Mode with Rising edge trigger detection. */
-	GPIO_InitStructure.Pin = GPIO_PIN_0;
-	GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING;
+	GPIO_InitStructure.Pin = GPIO_PIN_0; // Pin setzen
+	GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING; //Modus setzen -> Rising edge
 	GPIO_InitStructure.Pull = GPIO_NOPULL;
 	GPIO_InitStructure.Speed = GPIO_SPEED_HIGH;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-	/* Enable and set EXTI0 Interrupt to the lowest priority */
-	HAL_NVIC_SetPriority(EXTI0_IRQn, 2, 0);
-	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+	HAL_NVIC_SetPriority(EXTI0_IRQn, 2, 0); //auf niedrigste priorität setzen
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn); // Interrupt aktivieren
 }
 
-// interrupt callback
+/**
+  * @brief  Diese Funktion wird nach dem Auftreten des Interrupts als Callback aufgerufen.
+  * @param  uint16_t GPIO_Pin
+  * @retval None
+  */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	//wird aufgerufen wenn der User-Button gedrueckt wurde
 	if (GPIO_Pin == USER_BUTTON_PIN) {
-		licht->nachtschaltung = true;
-		/*ampel.unterbrochen = true;
-		if (ampel.unterbrochen) {
-			//Wenn die Nachtschaltung bereits aktiviert ist
-			if (ampel.status == GELB_BLINKEND) {
-				licht->nachtschaltung = false;
-			} else {
-				//Nachtschaltung aktivieren
-				licht->nachtschaltung = true;
-			}
-			ampel.unterbrochen = false;
-		}*/
+		//Wenn die Nachtschaltung bereits aktiviert ist
+		if (ampel.status == GELB_BLINKEND) {
+			licht->nachtschaltung = false;
+			licht->status = ROT;
+		} else {
+			//Nachtschaltung aktivieren
+			licht->nachtschaltung = true;
+		}
 	}
 }
 
-//Das ist der Timerinterrupt der jede millisekunde aufgerufen wird
+/**
+  * @brief  Diese Funktion ist der Timerinterrupt der jede Millisekunde aufgerufen wird.
+  * @param  None
+  * @retval None
+  */
 void HAL_SYSTICK_Callback(void) {
 	ampelsteuerung(licht);
 }

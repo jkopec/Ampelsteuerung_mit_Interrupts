@@ -44,25 +44,11 @@ void rote_gelbe_led_an();
 void gruene_led_an();
 
 /**
- * Diese Function laesst die gruene LED blinken.
- *
- * @retval void None
- */
-void gruene_led_blink();
-
-/**
  * Diese Function schaltet die gelbe LED ein und wartet anschliessend
  * zwei Sekunden.
  *
  * @retval void None
  */
 void gelbe_led_an();
-
-/**
- * Diese Function laesst die gelbe LED blinken.
- *
- * @retval void None
- */
-void gelbe_led_blink();
 
 #endif /* LED_FUNKTIONEN_H_ */

@@ -1,0 +1,141 @@
+\hypertarget{main_8c}{}\section{src/main.c File Reference}
+\label{main_8c}\index{src/main.\+c@{src/main.\+c}}
+
+
+Startet die Ampelsteuerung.  
+
+
+{\ttfamily \#include \char`\"{}stm32f3xx.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stm32f3\+\_\+discovery.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}state\+\_\+machine.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_adef628aee05abbb20439eb348119a96f}{E\+X\+T\+I0\+\_\+\+Config} (void)
+\begin{DoxyCompactList}\small\item\em Diese Funktion konfiguriert den Interrupt. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\item 
+void \hyperlink{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Diese Funktion wird nach dem Auftreten des Interrupts als Callback aufgerufen. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a5033855e81ba2071231b60599a3ce9a1}{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Callback} (void)
+\begin{DoxyCompactList}\small\item\em Diese Funktion ist der Timerinterrupt der jede Millisekunde aufgerufen wird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structampelsteuerung__zustand}{ampelsteuerung\+\_\+zustand} \hyperlink{main_8c_a02ef75d7f1eb8dff0be409e37d28e59d}{ampel}
+\begin{DoxyCompactList}\small\item\em Variable für den Zustand der Ampel definieren. \end{DoxyCompactList}\item 
+\hyperlink{structampelsteuerung__zustand}{ampelsteuerung\+\_\+zustand} $\ast$ \hyperlink{main_8c_ab12c90fc3e510f4936f01e3178250d66}{licht}
+\begin{DoxyCompactList}\small\item\em Variable für den Zustand der Ampel definieren. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Startet die Ampelsteuerung. 
+
+\begin{DoxyAuthor}{Author}
+Jakub\+Kopec 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2015-\/11-\/26 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000003}{Bug}]Bislang keine Fehler bekannt.\end{DoxyRefDesc}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_adef628aee05abbb20439eb348119a96f}{}\index{main.\+c@{main.\+c}!E\+X\+T\+I0\+\_\+\+Config@{E\+X\+T\+I0\+\_\+\+Config}}
+\index{E\+X\+T\+I0\+\_\+\+Config@{E\+X\+T\+I0\+\_\+\+Config}!main.\+c@{main.\+c}}
+\subsubsection[{E\+X\+T\+I0\+\_\+\+Config(void)}]{\setlength{\rightskip}{0pt plus 5cm}void E\+X\+T\+I0\+\_\+\+Config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_adef628aee05abbb20439eb348119a96f}
+
+
+Diese Funktion konfiguriert den Interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{}\index{main.\+c@{main.\+c}!H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback@{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback}}
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback@{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback}!main.\+c@{main.\+c}}
+\subsubsection[{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback(uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)}]{\setlength{\rightskip}{0pt plus 5cm}void H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin}
+\end{DoxyParamCaption}
+)}\label{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}
+
+
+Diese Funktion wird nach dem Auftreten des Interrupts als Callback aufgerufen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint16\+\_\+t} & G\+P\+I\+O\+\_\+\+Pin \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{main_8c_a5033855e81ba2071231b60599a3ce9a1}{}\index{main.\+c@{main.\+c}!H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Callback@{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Callback}}
+\index{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Callback@{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Callback}!main.\+c@{main.\+c}}
+\subsubsection[{H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Callback(void)}]{\setlength{\rightskip}{0pt plus 5cm}void H\+A\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Callback (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a5033855e81ba2071231b60599a3ce9a1}
+
+
+Diese Funktion ist der Timerinterrupt der jede Millisekunde aufgerufen wird. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection[{main(void)}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+Die Main-\/\+Function initialisiert den S\+T\+M + L\+E\+Ds und führt im Endeffekt die Ampelsteuerung aus.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em void} & None \\
+\hline
+\end{DoxyRetVals}
+
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_a02ef75d7f1eb8dff0be409e37d28e59d}{}\index{main.\+c@{main.\+c}!ampel@{ampel}}
+\index{ampel@{ampel}!main.\+c@{main.\+c}}
+\subsubsection[{ampel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ampelsteuerung\+\_\+zustand} ampel}\label{main_8c_a02ef75d7f1eb8dff0be409e37d28e59d}
+
+
+Variable für den Zustand der Ampel definieren. 
+
+\hypertarget{main_8c_ab12c90fc3e510f4936f01e3178250d66}{}\index{main.\+c@{main.\+c}!licht@{licht}}
+\index{licht@{licht}!main.\+c@{main.\+c}}
+\subsubsection[{licht}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ampelsteuerung\+\_\+zustand}$\ast$ licht}\label{main_8c_ab12c90fc3e510f4936f01e3178250d66}
+
+
+Variable für den Zustand der Ampel definieren. 
+

@@ -37,8 +37,7 @@ typedef enum {
 typedef struct {
 	ampel_status status; //!< speichert den aktuellen Status
 	int blink_zaehler; //!< zählt mit wie oft bereits geblinkt wurde
-	bool unterbrochen; //!< gibt an ob die Ampelsteuerung durch einen Interrupt unterbrochen wurde
-	bool nachtschaltung;
+	bool nachtschaltung; //!< gibt an, ob die Nachtschaltung aktiv ist
 } ampelsteuerung_zustand;
 
 /**
